@@ -1,4 +1,11 @@
-# bookstore
+# Bookstore App Design and Implementation 
+
+Application Design Documentation 
+
+This is avaialable of Doc 
+
+    https://docs.google.com/document/d/1L5DpQd3IyUciSw4UDVrSM4PvTPOh7r30M7_cKiz4IuU/edit
+
 The Application was build with spring boot and Postgre DB
 
 Prerequisite
@@ -48,6 +55,4 @@ This starts up the app on port 8282
 
 
 
-Application Design
 
-This is avaialable of Doc https://docs.google.com/document/d/1L5DpQd3IyUciSw4UDVrSM4PvTPOh7r30M7_cKiz4IuU/edit
