@@ -1,6 +1,7 @@
 package com.interswitchgroup.bookstore.controller;
 
 import com.interswitchgroup.bookstore.dto.ApiResponse;
+import com.interswitchgroup.bookstore.dto.BookDto;
 import com.interswitchgroup.bookstore.model.Book;
 import com.interswitchgroup.bookstore.service.impl.BookService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -30,11 +31,11 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<Book>> addBook(@Valid  @RequestBody Book book){
+    public ResponseEntity<ApiResponse<Book>> addBook(@Valid  @RequestBody BookDto book){
         try {
             return ResponseEntity.status(HttpStatus.CREATED).body( new ApiResponse<>(true, HttpStatus.CREATED.toString(),"SUCCESS", bookService.addBook(book)));
         }catch (Exception ex){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(false,ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.toString(), null));
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(false, HttpStatus.INTERNAL_SERVER_ERROR.toString(),ex.getMessage(), null));
         }
     }
 
@@ -43,7 +44,7 @@ public class BookController {
         try {
             return ResponseEntity.status(HttpStatus.OK).body( new ApiResponse<>(true, HttpStatus.OK.toString(),"SUCCESS", bookService.getBookById(id)));
         }catch (Exception ex){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(false,ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.toString(), null));
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(false, HttpStatus.INTERNAL_SERVER_ERROR.toString(),ex.getMessage(), null));
         }
 
     }
@@ -63,7 +64,7 @@ public class BookController {
             bookService.deleteBook(id);
             return ResponseEntity.status(HttpStatus.CREATED).body( new ApiResponse<>(true, HttpStatus.CREATED.toString(),"SUCCESS", null));
         }catch (Exception ex){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(false, HttpStatus.INTERNAL_SERVER_ERROR.toString(),ex.getMessage(), null));
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(false, HttpStatus.BAD_REQUEST.toString(),ex.getMessage(), null));
         }
 
     }

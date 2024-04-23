@@ -1,5 +1,6 @@
 package com.interswitchgroup.bookstore.service.impl;
 
+import com.interswitchgroup.bookstore.dto.BookDto;
 import com.interswitchgroup.bookstore.model.Book;
 import com.interswitchgroup.bookstore.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,13 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public Book addBook(Book book)  throws Exception{
+    public Book addBook(BookDto bookDto)  throws Exception{
+        var book = Book.builder().author(bookDto.getAuthor()).
+                       genre(bookDto.getGenre()).isbn(bookDto.getIsbn()).
+                     publicationYear(bookDto.getPublicationYear())
+                     .title(bookDto.getTitle())
+                     .build();
+
         return bookRepository.save(book);
     }
 
