@@ -25,7 +25,11 @@ Installation
 
 1 Clone the repository 
 
+       git clone https://github.com/josephogiolu/bookstore.git
+
 2 CD to the root directory of the cloned project
+
+    cd bookstore
 
 3 Install docker on the environment if you don't have it installed 
 
