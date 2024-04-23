@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  backend:
+    ##build: ./build.sh
+    image: bookstore-service:latest
+    container_name: bookstore-service
+    ports:
+      - "8282:8282"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/bookstore_db
+      SPRING_DATASOURCE_USERNAME: bookstore_user
+      SPRING_DATASOURCE_PASSWORD: secret_password
+
+
