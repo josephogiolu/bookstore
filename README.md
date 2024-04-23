@@ -6,9 +6,13 @@ This is avaialable of Doc
 
     https://docs.google.com/document/d/1L5DpQd3IyUciSw4UDVrSM4PvTPOh7r30M7_cKiz4IuU/edit
 
+    
+
 The Application was build with spring boot and Postgre DB
 
+
 Prerequisite
+
 1 Kindly ensure jdk 21 is installed
 
 2 Ensure Docker is install
@@ -17,6 +21,7 @@ Prerequisite
 
 
 Installation 
+
 
 1 Clone the repository 
 
