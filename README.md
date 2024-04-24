@@ -15,9 +15,9 @@ Prerequisite
 
 1 Kindly ensure jdk 21 is installed
 
-2 Ensure Docker is install
+2 Ensure Docker is installed
 
-3 We have the assunption you would be running it on linux or a mac ox
+3 We have the assumption you would be running it on linux or a mac ox
 
 
 Installation 
